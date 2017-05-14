@@ -12,7 +12,6 @@
         .then((response) => response.arrayBuffer())
         .then((buffer) => {
           Module.wasmBinary = buffer;
-          console.log(Module);
  
           const wasmScriptElem = document.createElement('script');
           wasmScriptElem.src = 'wasm/wasm_graph.js';

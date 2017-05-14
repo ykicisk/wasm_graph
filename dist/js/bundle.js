@@ -206,8 +206,6 @@ class JavaScriptUpdater extends GraphUpdaterBase {
 class RustUpdater extends GraphUpdaterBase {
     constructor({epsilon, animation_flag, num_nodes, x_list, y_list, edge_list}) {
         super({epsilon, animation_flag, num_nodes, x_list, y_list, edge_list});
-        console.log("RustUpdater.constructor");
-
         this.wasm_update_loop = Module.cwrap('wasm_update_loop',
                                              'number',
                                              ['number', 'number',
