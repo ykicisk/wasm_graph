@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>graph</title>
+   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript" src="js/jcanvas.min.js"></script>
+    <script>
+      var Module = {};
+ 
+      fetch('wasm/wasm_graph.wasm')
+        .then((response) => response.arrayBuffer())
+        .then((buffer) => {
+          Module.wasmBinary = buffer;
+          console.log(Module);
+ 
+          const wasmScriptElem = document.createElement('script');
+          wasmScriptElem.src = 'wasm/wasm_graph.js';
+          wasmScriptElem.addEventListener('load', (e) => {
+            const mainScriptElem = document.createElement('script');
+            mainScriptElem.src = 'js/bundle.js';
+            document.body.appendChild(mainScriptElem);
+          });
+          document.body.appendChild(wasmScriptElem);
+        });
+    </script>
+  </head>
+  <body>
+    <div id="menu"></div>
+    <canvas id="canvas" width="720" height="720" style="border:1px solid #000000;" ></canvas>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+[package]
+name = "wasm_graph"
+version = "0.1.0"
+authors = ["ykicisk <ykic.p3@gmail.com>"]

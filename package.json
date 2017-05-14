@@ -1,0 +1,14 @@
+{
+  "name": "wasm_graph",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "webpack --display-error-details",
+    "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^2.5.1"
+  }
+}
